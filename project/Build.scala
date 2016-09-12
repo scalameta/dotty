@@ -106,6 +106,7 @@ object DottyBuild extends Build {
                                   "com.novocode" % "junit-interface" % "0.11" % "test",
                                   "com.github.spullara.mustache.java" % "compiler" % "0.9.3",
                                   "com.typesafe.sbt" % "sbt-interface" % sbtVersion.value),
+      libraryDependencies += "org.scalameta" %% "scalameta" % "1.1.0",
       // enable improved incremental compilation algorithm
       incOptions := incOptions.value.withNameHashing(true),
 
