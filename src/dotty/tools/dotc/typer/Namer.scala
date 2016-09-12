@@ -369,7 +369,7 @@ class Namer { typer: Typer =>
                 import scala.meta._
                 val mods1 = mdef.mods.withAnnotations(mdef.mods.annotations.filter(_ ne ann))
                 val expandee = mdef.withMods(mods1)
-                expandee.show.parse[Stat].get
+                expandee.show.replace("module object", "object").parse[Stat].get
               }
               val metaArgs = List(metaPrefix, metaExpandee)
               val metaResult = impl.invoke(module, metaArgs.asInstanceOf[List[AnyRef]].toArray: _*).asInstanceOf[m.Tree]
